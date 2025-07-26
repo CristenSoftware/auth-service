@@ -1,0 +1,19 @@
+User
+  id: UUID
+  email: string
+  senha_hash: string
+  created_at: datetime
+
+Application
+  id: UUID
+  name: string         -- Ex: "Sistema de Academia"
+  slug: string         -- Ex: "academia", para identificação via API
+  domain_id: UUID
+
+Domain
+  id: UUID
+  name: string
+  api_url: string
+  admin_url: string
+  site_url: string
+  db_url: string

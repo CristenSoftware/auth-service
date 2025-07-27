@@ -189,6 +189,23 @@ docker-compose up db
 python main.py
 ```
 
+## CORS (Cross-Origin Resource Sharing)
+
+A API está configurada com CORS habilitado para permitir requisições de diferentes origens:
+
+- **Desenvolvimento**: Permite todas as origens (`*`) para facilitar o desenvolvimento
+- **Produção**: Recomenda-se especificar as origens exatas:
+
+```python
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://meusite.com", "https://app.meusite.com"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
+```
+
 ## Logs e Monitoramento
 
 - Health check disponível em `/health`
